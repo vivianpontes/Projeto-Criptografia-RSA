@@ -62,8 +62,15 @@ int main()
             scanf("%lf", &e);
         }
 
-        /*Salve, no diretório de execução do programa, um arquivo txt com os dois números que formam a chave pública.
-        As chaves públicas são: “n” e “e” */
+        // FILE: Tipo de dado para a criação de um ponteiro para arquivo
+        // *arquivo_chavespublicas: É um ponteiro para um arquivo que irá salvar as chaves públicas
+        FILE *arquivo_chavespublicas;
+
+        // fopen: Cria um arquivo com o nome "chavespublicas.txt" em modo de escrita (representado pelo "w")
+        // Após a criação, o ponteiro criado recebe o endereço do arquivo
+        arquivo_chavespublicas = fopen("chavespublicas.txt", "w");
+        // fprint: Escreve no arquivo criado o texto passado no segundo parametro.
+        fprintf(arquivo_chavespublicas, "%0.0lf %0.0lf", n, e);
 
     } else if (opcaousuario == 2) {
         //Encriptar;
@@ -73,5 +80,7 @@ int main()
         //printf(“Opção inválida\n”);
     }
 
+
+ 
     return 0;
 }
