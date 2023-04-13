@@ -59,6 +59,14 @@ int main()
     // Atribui ao ponteiro o primeiro endereço de memória do array codificação
     codificacao = textoParaCodificacao();
 
+    // FILE: Tipo de dado para a criação de um ponteiro para arquivo
+    // *arquivo_textocodificado: É um ponteiro para um arquivo que irá salvar o texto codificado
+    FILE *arquivo_textocodificado;
+
+    // fopen: Cria um arquivo com o nome "textocodificado.txt" em modo de escrita (representado pelo "w")
+    // Após a criação, o ponteiro criado recebe o endereço do arquivo
+    arquivo_textocodificado = fopen("textocodificado.txt", "w");
+
     // Memoria para o indice do array
     int i;
 
@@ -72,11 +80,15 @@ int main()
 
         // Verifica se é o final da codificação (valor -1)
         if (valor != -1) {
-            // Se não for, ele printa o valor no console
-            printf("%d ", valor);
+            // Se não for, ele escreve no arquivo o caractere criptografado
+            /*(int) fmod(pow(valor, e), n)
+            (int): faz uma conversão do valor "double" para inteiro
+            fmod: realiza operação de modulo entre o valor do primeiro parametro e do segundo (ex: fmod(a,b) = a mod b)
+            pow: realiza o calculo da exponencial entre o valor do primeiro parametro e do segundo (ex: pow(valor, e) = valor^e)*/
+            fprintf(arquivo_textocodificado, "%d ", (int) fmod(pow(valor, e), n));
         } else {
-            // Se for, ele finaliza o loop e printa um \n
-            printf("\n");
+            // Se for, ele finaliza o loop e escreve um fim de linha (\n)
+            fprintf(arquivo_textocodificado, "\n");
             break;
         }
     }
