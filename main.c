@@ -185,7 +185,7 @@ int main()
         // Após a criação, o ponteiro criado recebe o endereço do arquivo
         arquivo_chavespublicas = fopen("chavespublicas.txt", "w");
         // fprint: Escreve no arquivo criado o texto passado no segundo parametro.
-        fprintf(arquivo_chavespublicas, "%0.0lf %0.0lf", n, e);
+        fprintf(arquivo_chavespublicas, "Chaves públicas n: %0.0lf e:%0.0lf", n, e);
         fclose(arquivo_chavespublicas);
     }
     else if (opcaousuario == 2)
@@ -211,8 +211,14 @@ int main()
         // Memoria para o indice do array
         long long unsigned int i;
         long long unsigned int e, n;
-        printf("Digite a chave pública:\n");
-        scanf("%lld %lld", &e, &n);
+        printf("Digite a chave pública e:\n");
+        scanf("%lld", &e);
+        printf("Digite a chave pública n:\n");
+        scanf("%lld", &n);
+
+        //avisa que o texto codificado foi gerado
+        printf("O texto codificado foi gerado\n");
+
 
         /* Loop que começa em 0 e vai até o valor do indice menor que 1000.
         i = 0; - inicio o 'i' valendo zero
@@ -284,7 +290,7 @@ int main()
                 fprintf(arquivo_textocodificado, "%c", valor + 95);
             }
         }
-        printf("\n");
+        printf("O arquivo foi decodificado com sucesso!\n");
 
         return 0;
     }
