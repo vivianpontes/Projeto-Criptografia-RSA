@@ -272,6 +272,7 @@ int main()
         long long unsigned int num, i = 0;
 
         while (fscanf(arquivo_textocodificado, "%lld", &num) == 1)
+            
         {
             numbers[i++] = num;
         }
