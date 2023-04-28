@@ -113,20 +113,25 @@ void main()
     else if (opcaousuario == 2)
     {
         printf("Digite a frase para criptografar:\n");
-
-        getchar(); // Limpa o buffer do teclado
+        
+        // Limpa o buffer do teclado
+        getchar(); 
 
         // Cria um ponteiro para um inteiro
         big_int *codificacao;
         // Atribui ao ponteiro o primeiro endereço de memória do array codificação
         codificacao = textoParaCodificacao();
 
-        // FILE: Tipo de dado para a criação de um ponteiro para arquivo
-        // *arquivo_textocodificado: É um ponteiro para um arquivo que irá salvar o texto codificado
+        /*
+            FILE: Tipo de dado para a criação de um ponteiro para arquivo
+            *arquivo_textocodificado: É um ponteiro para um arquivo que irá salvar o texto codificado
+        */
         FILE *arquivo_textocodificado;
 
-        // fopen: Cria um arquivo com o nome "textocodificado.txt" em modo de escrita (representado pelo "w")
-        // Após a criação, o ponteiro criado recebe o endereço do arquivo
+        /*
+            fopen: Cria um arquivo com o nome "textocodificado.txt" em modo de escrita (representado pelo "w")
+            Após a criação, o ponteiro criado recebe o endereço do arquivo
+        */
         arquivo_textocodificado = fopen("textocodificado.txt", "w");
 
         // Memoria para o indice do array
