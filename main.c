@@ -41,7 +41,7 @@ void main()
         big_int p;
         scanf("%llu", &p);
 
-        while (ehprimo(p, 2) == false && p > MAX_CHAVE)
+        while (ehprimo(p) == false && p > MAX_CHAVE)
         {
             limparTerminal();
 
@@ -54,7 +54,7 @@ void main()
         big_int q;
         scanf("%llu", &q);
         
-        while (ehprimo(q, 2) == false && q > MAX_CHAVE)
+        while (ehprimo(q) == false && q > MAX_CHAVE)
         {
             limparTerminal();
 

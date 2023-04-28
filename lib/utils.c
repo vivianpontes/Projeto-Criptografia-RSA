@@ -110,21 +110,22 @@ big_int *textoParaCodificacao()
  * params: big_int n - número a ser verificado
  * return: bool - true se for primo, false se não for primo 
  */
-bool ehprimo(big_int numero, big_int i)
+bool ehprimo(big_int numero)
 {
     /*
         Verifica se o número é 0 ou 1, pois, eles não são primos
-        Verifica se o número é igual ao divisor atual, pois, se for, ele é primo
-        Verifica se o resto da divisão do número pelo divisor atual é 0, pois, se for, ele não é primo
+        Realiza um loop que começa em 2 e vai até o valor do indice menor que o número
+        Verifica se o resto da divisão entre o número e o indice é igual a 0
+        Caso seja, o número não é primo
     */
-    if (numero == 0 || numero == 1)
-        return false;
-    if (numero == i)
-        return true;
-    if (numero % i == 0)
-        return false;
+    if (numero == 0 || numero == 1) return false;
 
-    return ehprimo(numero, i + 1);
+    for(big_int i = 2; i < numero; i++)
+    {
+        if(numero % i == 0) return false;
+    }
+
+    return true;
 }
 
 /*
@@ -146,7 +147,7 @@ big_int inversoModulo(big_int a, big_int modulo)
             Verifica se o resto da divisão entre o número e o módulo é igual a 1
             Caso seja, o número é o inverso modular do número
         */
-        if (((a % modulo) * (x % modulo)) % modulo == 1)
+        if ((a * x) % modulo == 1)
         {
             return x;
         }
