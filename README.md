@@ -1,5 +1,4 @@
-# Projeto-Criptografia-RSA
-# PROJETO CRIPTOGRAFIA RSA
+# Projeto Criptografia RSA
 
 Projeto desenvolvido para a disciplina de Matemática Discreta – 2022.2, no Instituto de Computação da Universidade de Alagoas (IC/UFAL). Este README busca descrever o trabalho de forma mais técnica e voltada para o desenvolvimento. 
 
