@@ -112,7 +112,7 @@ void main()
     */
     else if (opcaousuario == 2)
     {
-        printf("Digite a frase para criptografar:\n");
+        printf("Digite a frase para encriptar:\n");
         
         // Limpa o buffer do teclado
         getchar(); 
@@ -138,11 +138,11 @@ void main()
         big_int i;
         big_int e, n;
 
-        printf("Digite a chave pública e:\n");
-        scanf("%llu", &e);
-        printf("Digite a chave pública n:\n");
+        printf("Digite o valor da chave pública (n):\n");
         scanf("%llu", &n);
-
+        printf("Digite o valor da chave pública (e):\n");
+        scanf("%llu", &e);
+        
         /* 
             Loop que começa em 0 e vai até o valor do indice menor que MAX_STRING.
             i = 0; - inicio o 'i' valendo zero
@@ -180,30 +180,26 @@ void main()
     */
     else if (opcaousuario == 3)
     {
-        printf("Digite o valor de p: ");
+        big_int p, q, e;
 
-        big_int p;
+        printf("Digite o primeiro número primo (p):\n");
         scanf("%llu", &p);
 
-        printf("Digite o valor de q: ");
-
-        big_int q;
+        printf("Digite o segundo número primo (q):\n");
         scanf("%llu", &q);
 
-        printf("Digite o valor de e: ");
-
-        big_int e;
+        printf("Digite o valor da chave pública (e):\n");
         scanf("%llu", &e);
 
         big_int phi = (p - 1) * (q - 1);
         big_int d = inversoModulo(e, phi);
         big_int n = p * q;
-
-        printf("d: %llu, n: %llu\n", d, n);
+        
+        printf("Chaves privadas d: %llu, n: %llu\n", d, n);
 
         char nome_arquivo[MAX_STRING];
-
-        printf("Digite o arquivo de texto a ser decodificado: ");
+        
+        printf("Digite o nome do arquivo que contém o texto codificado:\n");
         scanf("%s", nome_arquivo);
 
         FILE *arquivo_textocodificado;
